@@ -1,0 +1,347 @@
+html {
+	max-width: 2000px;
+	background-color: black;
+	margin: 0 auto;
+}
+
+/*-------- Main Wrapper / Section Layout and Styling (screens smaller than 500px width)--------*/
+
+#mainWrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+	background-color: black;
+}
+
+#clickLander {
+	height: 100%;
+	width: 100%;
+	position:fixed;
+	top: 0;
+	left: 0;
+	z-index: 400;
+	background-color: rgba(165,155,145, 0.8);
+}
+
+header {
+	background: url('img/woodsa.jpg') no-repeat center;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	grid-area: header;
+}
+
+main {
+	grid-area: main;
+	display: grid;
+	grid-template-rows:10px 1fr 1fr 1fr 1fr 10px;
+	grid-template-columns: 5% 1fr 5%;
+	grid-row-gap: 20px; 
+	grid-template-areas:
+		". . ."
+		". about ."
+		". beerMenu ."
+		". community ."
+		". contact ."
+		". . .";
+}
+
+footer {
+	grid-area: footer;
+	text-align: center;
+	color: white;
+	background-color: black;
+}
+
+footer ul {
+	padding: 0px;
+	list-style-type: none;
+	text-align: center;
+}
+
+footer ul li {
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+}
+
+footer ul li a {
+	text-decoration: none;
+	padding: 0 1em;
+}
+
+footer ul li a:link {
+	color: white;
+}
+
+footer ul li a:visited {
+	color: white;
+}
+
+footer ul li a:hover {
+	color: rgb(92, 86, 80);
+}
+
+header img {
+	width: 90%;
+	max-width: 550px;
+}
+
+/*-------- Sandwich / Expanded Menu Layout and Styling (screens smaller than 500px width)--------*/
+
+.sandwichMenu {
+	background-color: rgb(92, 86, 80);
+	height: 40px;
+	width: 50px;
+	border-radius: 5px;
+	position: fixed;
+	right: 5px;
+	top: 10px;
+	z-index: 500;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.sandwichMenu div {
+	width: 50%;
+	margin: 0px auto;
+	height: 2px;
+	background-color: white;
+}
+
+.sandwichMenu div:first-child {
+	margin-top: 10px;
+}
+
+.sandwichMenu div:last-child {
+	margin-bottom: 10px;
+}
+
+/*Expandable Menu*/
+
+.expandableMenu {
+	height: 0px;
+	overflow: hidden;
+	list-style-type: none;
+	padding: 0px;
+	width: 100%;
+	position: fixed;
+	top: 50px;
+	right: 0px;
+	background-color: white;
+	z-index: 500;
+	transition: height 0.5s;
+	background-color: rgb(48, 40, 33);
+}
+
+.expandableMenu div {
+	
+	z-index: 500;
+	color: white;
+	text-align: center;
+	font-family: 'Candal', sans-serif;
+	font-size: 1.3em;
+	padding: 8px;
+	
+}
+
+.expandableMenu div a {
+	text-decoration: none;
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.expandableMenu div a:hover {
+	color: white;
+}
+
+.expandableMenu div a:active {
+	background-color: transparent;
+}
+
+.expandableMenu div:hover {
+	background-color: rgb(157, 124, 66);
+	cursor: pointer;
+}
+
+.expandableMenu div:first-child {
+	padding-top: 15px;
+}
+
+.expandableMenu div:last-child {
+	padding-bottom: 15px;
+}
+
+.socialNavigation {
+	width: 100%;
+	max-width: 550px;
+	margin-bottom: 20px;
+}
+
+.socialNavigation ul {
+	margin: auto;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	padding: 0px;
+}
+
+.socialNavigation ul li a img {
+	max-width: 50px;
+}
+
+/*-------- MAIN SECTION Card Styling and Layout(screens smaller than 500px width)--------*/
+
+.mainCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mainCard h1 {
+	color: white;
+	font-size: 2em;
+	font-family: 'Lobster', cursive;
+	text-shadow: 5px 5px rgb(157, 124, 66);
+	text-align: center;
+}
+
+/*Button Styles Inside Card*/
+.btn {
+	font-family: 'Candal', sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+  	padding: 10px 40px;
+  	border: white solid 4px;
+  	border-radius: 5px;
+  	color: white;
+  	background-color: transparent;
+  	cursor: pointer;
+  	box-shadow: 2px 2px 5px rgb(157, 124, 66);
+}
+
+.btn {
+	margin-bottom: 1em;
+}
+
+.btn:hover {
+	background-color: rgba(152,119,61, 0.8);
+	color: white;
+}
+
+.btn a {
+	text-decoration: none;
+	color:white;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.btn a:hover {
+	color: white;
+}
+
+.btn a:active {
+	background-color: transparent;
+}
+
+
+/*-------- Grid Styling and Layout for Cards(screens smaller than 500px width)--------*/
+/*-------- Card Size and Background Style and Layout(screens smaller than 500px width)--------*/
+
+#beerMenu {
+	grid-area: beerMenu;
+	background: linear-gradient(rgba(92, 86, 80, 0.5),rgba(92, 86, 80, 0.5)), url('img/buck_bald_scream.jpg') no-repeat center;
+	background-size: cover;
+	height: 300px;
+}
+
+#community {
+	grid-area: community;
+	background: linear-gradient(rgba(92, 86, 80, 0.5),rgba(92, 86, 80, 0.5)), url('img/patio_partya.jpg') no-repeat center;
+	background-size: cover;
+	height: 300px;
+}
+
+#about {
+	grid-area: about;
+	background: linear-gradient(rgba(92, 86, 80, 0.5),rgba(92, 86, 80, 0.5)), url('img/beer_communitya.jpg') no-repeat center;
+	background-size: cover;
+	height: 300px;
+}
+
+
+#contact {
+	grid-area: contact;
+	background: linear-gradient(rgba(92, 86, 80, 0.5),rgba(92, 86, 80, 0.5)), url('img/about_usa.jpg') rgba(92, 86, 80, 0.8) no-repeat center;
+	background-size: cover;
+	height: 300px;
+}
+
+/*-------- min-width 354px --------*/
+
+@media (min-width: 354px) {
+	.mainCard h1 {
+		font-size: 2.5em;
+	}
+}
+/*-------- min-width 500px --------*/
+
+
+/*-------- min-width LAYOUT FOR CARDS 757px --------*/
+
+@media (min-width: 757px) {
+	
+	.sandwichMenu {
+		display: none;
+	}
+
+	.expandableMenu {
+		display: none;
+	}
+
+	#clickLander {
+		display: none;
+	}
+
+	main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: 0.5% 1fr 1fr 0.5%;
+		grid-template-rows: 5px 1fr 1fr 5px;
+		grid-row-gap: 10px;
+		grid-column-gap: 10px; 
+		grid-template-areas:
+			". . . ."
+			". about beerMenu ."
+			". community contact ."
+			". . . .";
+	}	
+}
+
+/*-------- min-width LAYOUT FOR CARDS 1477px --------*/
+
+@media (min-width: 1477px) {
+	main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: 0.5% 1fr 1fr 1fr 1fr 0.5%;
+		grid-template-rows: 5px 1fr 5px;
+		grid-row-gap: 10px;
+		grid-column-gap: 10px; 
+		grid-template-areas:
+			". . . . . ."
+			". about beerMenu community contact ."
+			". . . . . .";
+	}
+}
+
